@@ -25,7 +25,7 @@ You have two options to start and use the Podman API. You can start it using sys
 
 You can therefore check the connectivity to the API :
 
-```JSON
+```SHELL
 $ curl -s --unix-socket /run/podman/podman.sock http://d/v4.0.0/libpod/containers/json | jq
 [
   {
