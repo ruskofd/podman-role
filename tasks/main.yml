@@ -1,0 +1,15 @@
+---
+- name: System tasks
+  import_tasks: system.yml
+
+- name: Install Podman packages
+  ansible.builtin.package:
+    name: podman
+    state: present
+
+- name: Configure Podman
+  import_tasks: configure.yml
+
+- name: Manage Podman API
+  include_tasks: api.yml
+  when: podman_api_enabled

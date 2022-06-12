@@ -1,0 +1,14 @@
+---
+- name: Ensure Podman API socket activation is enabled and started
+  ansible.builtin.systemd:
+    name: podman.socket
+    state: started
+    enabled: yes
+  when: podman_api_activation_mode == "socket"
+
+- name: Ensure Podman API service is enabled and started
+  ansible.builtin.systemd:
+    name: podman.service
+    state: started
+    enabled: yes
+  when: podman_api_activation_mode == "service"

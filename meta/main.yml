@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: Florian Bobin
+  description: Ansible role to deploy and manage Podman container engine
+  license: MIT
+  min_ansible_version: 5.0.0
+  platforms: []
+  galaxy_tags: []
+dependencies: []

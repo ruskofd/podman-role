@@ -22,7 +22,11 @@ This Ansible role is designed to deploy and manage Podman on target servers.
 
 ### Role variables
 
+The role variables are documented [HERE](docs/variables.md)
+
 ### Examples
+
+You can find some configurations examples [HERE](docs/examples.md)
 
 ### Install and use this role
 

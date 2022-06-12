@@ -1,0 +1,58 @@
+#------------------------------------------------------------------------------
+# GENERAL
+#------------------------------------------------------------------------------
+podman_version: ""
+
+#------------------------------------------------------------------------------
+# CONFIGURATION
+#------------------------------------------------------------------------------
+
+# - Containers -
+podman_default_capabilities:
+  - "CHOWN"
+  - "DAC_OVERRIDE"
+  - "FOWNER"
+  - "FSETID"
+  - "KILL"
+  - "NET_BIND_SERVICE"
+  - "SETFCAP"
+  - "SETGID"
+  - "SETPCAP"
+  - "SETUID"
+  - "SYS_CHROOT"
+podman_default_sysctls:
+  - "net.ipv4.ping_group_range=0 0"
+podman_default_ulimits: []
+podman_init_enabled: false
+podman_keyring_enabled: true
+podman_log_driver: journald
+podman_log_size_max: "-1"
+podman_log_tag: ""
+podman_pids_limit: 2048
+podman_seccomp_profile_path: "/usr/share/containers/seccomp.json"
+podman_userns_mode: host
+podman_userns_size: 65536
+podman_userns_range: "1000000:1000000"
+
+# - Network -
+podman_network_backend: netavark
+podman_network_default_name: podman
+podman_network_default_subnet: "10.88.0.0/16"
+
+# - Engine -
+podman_cgroup_manager: systemd
+podman_events_logger: journald
+podman_runtime: crun
+
+# - Registries -
+podman_unqualified_search_registries:
+  - "registry.fedoraproject.org"
+  - "registry.access.redhat.com"
+  - "docker.io"
+  - "quay.io"
+podman_shortname_mode: enforcing
+
+# - API -
+podman_api_enabled: false
+podman_api_activation_mode: socket
+podman_api_timeout_sec: 5

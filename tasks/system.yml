@@ -1,0 +1,8 @@
+---
+# This is required when using userns mode to "auto"
+- name: Ensure Podman user uid/gid range is defined
+  ansible.builtin.lineinfile:
+    path: "{{ item }}"
+    line: "containers:{{ podman_userns_range }}"
+    state: present
+  loop: [ "/etc/subuid", "/etc/subgid" ]
